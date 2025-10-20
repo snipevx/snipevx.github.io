@@ -5,7 +5,7 @@ description: 'Diving into leprechaun loader, performing static and dynamic analy
 image: ''
 tags: ['malware-analysis', 'reversing']
 category: 'malware-analysis'
-draft: true
+draft: false
 ---
 
 - Introduction
