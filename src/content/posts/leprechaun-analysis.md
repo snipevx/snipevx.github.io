@@ -17,7 +17,7 @@ draft: false
 
 ## Introduction
 
-I recently completed the Practicat Malware Analysis & Triage course from TCM Security (it was awesome), big kudos to Matt Kiley aka Husky Hacks for putting together such an awesome course. So after completing PMAT I was looking out for some malware to analyze and I stumbled upon this LeprechaunHvnc loader. Doing further research I found that it was initially discovered by a researcher [Kseniia N](https://x.com/naumovax) and their teammate [Tony](https://x.com/t0nynot) in April 2024 and they posted about it [here](https://x.com/naumovax/status/1775185431237206209).
+I recently completed the Practical Malware Analysis & Triage course from TCM Security, Big kudos to Matt Kiley (Husky Hacks) for putting together such an awesome course. So after completing PMAT I was looking out for some malware to analyze and I stumbled upon this LeprechaunHvnc loader. Doing further research I found that it was initially discovered by a researcher [Kseniia N](https://x.com/naumovax) and their teammate [Tony](https://x.com/t0nynot) in April 2024 and they posted about it [here](https://x.com/naumovax/status/1775185431237206209).
 
 #### What is a Loader ?
 >  A loader is a malware that fetches, decrypts, or loads another payload (often from a remote server) into memory for execution.
@@ -30,7 +30,7 @@ I recently completed the Practicat Malware Analysis & Triage course from TCM Sec
 
 **SHA256:** `1d0753beaabc660960bb5297f43eae38128647c2a23b02b2550646d58aff8797`
 
-Sample Link: [baazar.abuse.ch](https://bazaar.abuse.ch/sample/1d0753beaabc660960bb5297f43eae38128647c2a23b02b2550646d58aff8797#)
+Sample Link: [bazaar.abuse.ch](https://bazaar.abuse.ch/sample/1d0753beaabc660960bb5297f43eae38128647c2a23b02b2550646d58aff8797#)
 
 ## Overview
 
@@ -46,7 +46,7 @@ Looking at the strings in PE studio we find some important indicators that this 
 
 ![alt text](./images/leprechaun/s3.png)
 
-Additionally we look at the libraries being used in the loader. Pretty generic stuff - `WININET` for creating conenctions between the compromised machine and the c2 server.
+Additionally we look at the libraries being used in the loader. Pretty generic stuff - `WININET` for creating connections between the compromised machine and the c2 server.
 
 ![alt text](./images/leprechaun/s4.png)
 
@@ -64,13 +64,13 @@ Looking further we find that there are 2 operations being performed depending on
 
 ![alt text](./images/leprechaun/s7.png)
 
-Before that we see a function called `sub_401640` that simply checks whether the subkey `Software\\LeprechaunHvnc` is present in the location `HKEY_CURRENT_USER`, basically it checks if the implant is present on the target. If its not present, this function is responsible for downloading the implant.
+Before that we see a function called `sub_401640` that simply checks whether the subkey `Software\\LeprechaunHvnc` is present in the location `HKEY_CURRENT_USER`, basically it checks if the implant is present on the target. If it's not present, this function is responsible for downloading the implant.
 
 ![alt text](./images/leprechaun/s8.png)
 
 #### Function 1 - `sub_4012A0` 
 
-The first thing we find is, the malware is utilising the `GetUserName` function to enumerate whether the current active user is an administrator or a normal user.
+The first thing we find is, the malware is utilising the `GetUserName` function to check the current user.
 
 ![alt text](./images/leprechaun/s9.png)
 
@@ -92,7 +92,7 @@ Moving on to the next part of the function, it creates a registry key named `Sof
 
 ![alt text](./images/leprechaun/s14.png)
 
-The last part of the current function checks if the value of the lpString2 is "User" (which is determined from the initial checks this function performs). If the value is user, then the file generates a directory named `WindowsecurityUpdates` under the documents directory and copies the downloaded implant to the created directory within documents directory. It also creates a registry subkey named `windowsupdates`.
+The last part of the current function checks if the value of the lpString2 is "User" (which is determined from the initial checks this function performs). If the value is user, then the loader generates a directory named `WindowsecurityUpdates` under the documents directory and copies the downloaded implant to the created directory within documents directory. It also creates a registry subkey named `windowsupdates`.
 
 ![alt text](./images/leprechaun/s15.png)
 
@@ -143,4 +143,4 @@ Furthermore we check the registry editor and find that a registry key is created
 ![alt text](./images/leprechaun/s23.png)
 
 ## Final Words
-This was my first ever analysis of a malware so I probably would have missed some things but it was a good experience dissecting this laoder and looking at the internal workings of how it operates, establishing a foothold on the system, using registry key to verify the presence of the implant, enumerating user privileges and windows version, downloading the implant from the c2 server and performing certain tasks as commanded by the c2 operator. I might release some more malware analysis blogs in future.
+This was my first ever analysis of a malware so I probably would have missed some things but it was a good experience dissecting this loader and looking at the internal workings of how it operates, establishing a foothold on the system, using registry key to verify the presence of the implant, enumerating user privileges and windows version, downloading the implant from the c2 server and performing certain tasks as commanded by the c2 operator. I might release some more malware analysis blogs in future.
