@@ -17,7 +17,7 @@ draft: false
 
 ## Introduction
 
-I recently completed the Practicat Malware Analysis & Triage course from TCM Security (it was awesome), big kudos to Matt Kiley aka Husky Hacks for putting together such an awesome course. So after completing PMAT i was looking out for some malware to analyze and i stumbled upon this LeprechaunHvnc loader. Doing further research I found that it was initially discovered by a researcher [Kseniia N](https://x.com/naumovax) and their teammate [Tony](https://x.com/t0nynot) and they posted about it [here](https://x.com/naumovax/status/1775185431237206209).
+I recently completed the Practicat Malware Analysis & Triage course from TCM Security (it was awesome), big kudos to Matt Kiley aka Husky Hacks for putting together such an awesome course. So after completing PMAT I was looking out for some malware to analyze and I stumbled upon this LeprechaunHvnc loader. Doing further research I found that it was initially discovered by a researcher [Kseniia N](https://x.com/naumovax) and their teammate [Tony](https://x.com/t0nynot) in April 2024 and they posted about it [here](https://x.com/naumovax/status/1775185431237206209).
 
 #### What is a Loader ?
 >  A loader is a malware that fetches, decrypts, or loads another payload (often from a remote server) into memory for execution.
