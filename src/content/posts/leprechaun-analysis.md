@@ -125,6 +125,9 @@ Looking at the last part of the loader we see that it creates a temporary direct
 And the work of the loader is finished here after downloading the implant onto the target system.
 
 ## Dynamic Analysis
+
+If you are following along, make sure you take snapshot of the VM you are using for the analysis before executing the malware so that it can be restored after the analysis is completed.
+
 ### Checking the HTTP traffic using Wireshark
 
 We start up wireshark, make sure its listening on our network card and execute the leprechaun.exe file.
