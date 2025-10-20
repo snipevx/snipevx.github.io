@@ -64,7 +64,7 @@ Looking further we find that there are 2 operations being performed depending on
 
 ![alt text](./images/leprechaun/s7.png)
 
-Before that we see a function called `sub_401640` that simply checks whether the subkey `Software\\LeprechaunHvnc` is present in the location `HKEY_CURRENT_USER`, basically it checks if the implant is present on the target. If it's not present, this function is responsible for downloading the implant.
+Before that we see a function called `sub_401640` that simply checks whether the subkey `Software\\LeprechaunHvnc` is present in the location `HKEY_CURRENT_USER`, basically it checks if the implant is present on the target.
 
 ![alt text](./images/leprechaun/s8.png)
 
