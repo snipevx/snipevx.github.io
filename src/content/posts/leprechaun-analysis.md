@@ -15,10 +15,16 @@ draft: true
 - Dynamic Analysis
 - Final Words
 
----
 ## Introduction
 
-This malware is a loader called `LeprechaunHvnc`. That downloads the implant from the c2 server onto the target machine. Initially discovered by [Kseniia N](https://x.com/naumovax/status/1775185431237206209).
+I recently completed the Practicat Malware Analysis & Triage course from TCM Security (it was awesome), big kudos to Matt Kiley aka Husky Hacks for putting together such an awesome course. So after completing PMAT i was looking out for some malware to analyze and i stumbled upon this LeprechaunHvnc loader. Doing further research I found that it was initially discovered by a researcher [Kseniia N](https://x.com/naumovax) and their teammate [Tony](https://x.com/t0nynot) and they posted about it [here](https://x.com/naumovax/status/1775185431237206209).
+
+#### What is a Loader ?
+>  A loader is a malware that fetches, decrypts, or loads another payload (often from a remote server) into memory for execution.
+
+#### Difference between a loader and a dropper
+> A dropper delivers and installs a built-in payload, while a loader retrieves or loads a payload from elsewhere for execution.
+
 
 ## Metadata
 
@@ -27,20 +33,19 @@ Sample Link: [baazar.abuse.ch](https://bazaar.abuse.ch/sample/1d0753beaabc660960
 
 ## Overview
 
-!--- summary of the analysis here --–!
+In this blog we will be going over the analysis of the leprechaun loader. First we perform static analysis using IDA to understand the working of the loader, then we will use wireshark to see the working of the loader by inspecting the http web traffic it generates when it tries to reach out to the C2 server and finally verify that it creates a registry key (as we will see in the static analysis) using registry editor. And the leprechaun name is taken from an Irish Legendary Creature.
 
 ## Static Analysis
-
 ### Inspecting in PE Studio
 File properties
 
 ![alt text](./images/leprechaun/s2.png)
 
-Looking at the strings in PE studio we find some important indicators that this binary is an implant and part of a c2.
+Looking at the strings in PE studio we find some important indicators that this malware is an loader and part of a c2.
 
 ![alt text](./images/leprechaun/s3.png)
 
-Additionally we look at the libraries being used in the implant. Pretty generic stuff WININET for creating conenctions between the compromised machine and the c2 server.
+Additionally we look at the libraries being used in the loader. Pretty generic stuff - `WININET` for creating conenctions between the compromised machine and the c2 server.
 
 ![alt text](./images/leprechaun/s4.png)
 
@@ -50,7 +55,7 @@ Additionally we look at the libraries being used in the implant. Pretty generic 
 
 We have a few functions and a huge graph starting from the start function.
 
-Looking through the graph view, initially we find use of Urlmon.dll file, going a little further we find the address of the c2 server being used:
+Looking through the graph view, initially we find use of Urlmon.dll file, going a little further we find the address of the c2 server being used.
 
 ![alt text](./images/leprechaun/s6.png)
 
@@ -58,12 +63,13 @@ Looking further we find that there are 2 operations being performed depending on
 
 ![alt text](./images/leprechaun/s7.png)
 
-Before that we see a function called `sub_401640` that simply checks whether the subkey Software\\LeprechaunHvnc is present in the location HKEY_CURRENT_USER, basically it checks if the implant is present on the target or not.
+Before that we see a function called `sub_401640` that simply checks whether the subkey `Software\\LeprechaunHvnc` is present in the location `HKEY_CURRENT_USER`, basically it checks if the implant is present on the target. If its not present, this function is responsible for downloading the implant.
 
 ![alt text](./images/leprechaun/s8.png)
+
 #### Function 1 - `sub_4012A0` 
 
-The first thing we find is, the malware is utilising the GetUserName function to enumerate whether the current active user is an administrator or a normal user.
+The first thing we find is, the malware is utilising the `GetUserName` function to enumerate whether the current active user is an administrator or a normal user.
 
 ![alt text](./images/leprechaun/s9.png)
 
@@ -77,15 +83,15 @@ After the user and the windows version are enumerated the string length function
 
 ![alt text](./images/leprechaun/s12.png)
 
-The next part of the function establishes a connection with the c2 and downloads the implant using the HttpOpenRequestW api function and sends a GET request.
+The next part of the function establishes a connection with the c2 and downloads the implant using the HttpOpenRequestW API function and sends a GET request.
 
 ![alt text](./images/leprechaun/s13.png)
 
-Moving on to the next part of the function, it creates a registry key named “Software\LeprechaunHvnc” and sets value named “ID” in that key.
+Moving on to the next part of the function, it creates a registry key named `Software\LeprechaunHvnc` and sets value named “ID” in that key.
 
 ![alt text](./images/leprechaun/s14.png)
 
-The last part of the current function checks if the value of the lpString2 is “User” (which is determined from the initial checks this function performs). If the value is user, then the file generates a directory named `WindowsecurityUpdates` under the documents directory and copies the downloaded implant to the created directory within documents directory. It also creates a registry subkey named `windowsupdates`.
+The last part of the current function checks if the value of the lpString2 is "User" (which is determined from the initial checks this function performs). If the value is user, then the file generates a directory named `WindowsecurityUpdates` under the documents directory and copies the downloaded implant to the created directory within documents directory. It also creates a registry subkey named `windowsupdates`.
 
 ![alt text](./images/leprechaun/s15.png)
 
@@ -119,6 +125,7 @@ And the work of the loader is finished here after downloading the implant onto t
 
 ## Dynamic Analysis
 ### Checking the HTTP traffic using Wireshark
+
 We start up wireshark, make sure its listening on our network card and execute the leprechaun.exe file.
 
 Filtering for http traffic in wireshark we find that the loader tries to send the os version and user details to the c2 operator and then further tries to receive commands but the c2 is shut down, so it keeps trying to reach out to the c2 continuously.
@@ -126,6 +133,10 @@ Filtering for http traffic in wireshark we find that the loader tries to send th
 ![alt text](./images/leprechaun/s22.png)
 
 ### Checking the registry records
+
 Furthermore we check the registry editor and find that a registry key is created with the name LeprechaunHvnc with a value ID as we saw in our analysis using IDA above.
 
 ![alt text](./images/leprechaun/s23.png)
+
+## Final Words
+This was my first ever analysis of a malware so I probably would have missed some things but it was a good experience dissecting this laoder and looking at the internal workings of how it operates, establishing a foothold on the system, using registry key to verify the presence of the implant, enumerating user privileges and windows version, downloading the implant from the c2 server and performing certain tasks as commanded by the c2 operator. I might release some more malware analysis blogs in future.
