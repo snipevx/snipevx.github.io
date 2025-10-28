@@ -1,6 +1,6 @@
 ---
 title: Dissecting the Gremlin Infostealer
-published: 2025-11-01
+published: 2025-10-28
 description: 'Analysis of the C# based Gremlin Infostealer'
 image: ''
 tags: ['malware-analysis', 'reversing']
