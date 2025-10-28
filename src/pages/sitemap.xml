@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://vxsnipe.xyz/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/about/</loc>
+  <lastmod>2025-10-28T18:00:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/category/active-directory/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/category/malware-analysis/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/category/reverse-engineering/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/category/webapp-pentesting/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/adcs/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/assembly/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/bloodhound/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/ESC1/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/jwt/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/malware-analysis/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/postexp/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/reversing/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/archive/tag/webappsec/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/posts/dissecting-gremlin/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/posts/leprechaun-analysis/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/posts/attack-mapping-with-bloodhound/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/posts/abusing-adcs/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/posts/jku-injection/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vxsnipe.xyz/posts/writing-your-first-assembly-program/</loc>
+  <lastmod>2025-10-28T18:00:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
