@@ -22,6 +22,7 @@ In modern times, infostealers pose a major threat because they enable large-scal
 ## Metadata
 
 **SHA256:** `d1ea7576611623c6a4ad1990ffed562e8981a3aa209717065eddc5be37a76132`
+
 **Sample Link:** [here](https://bazaar.abuse.ch/sample/d1ea7576611623c6a4ad1990ffed562e8981a3aa209717065eddc5be37a76132/)
 
 ## Overview
