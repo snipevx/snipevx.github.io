@@ -176,4 +176,5 @@ Gremlin stages all gathered data, archived into a zip file in a malware controll
 
 ## Final Words
 
-This was my very basic analysis of the gremlin infostealer. Quick wrap-up: **Gremlin Stealer** is a tidy, C#-based infostealer that grabs browser creds/cookies, crypto wallets, VPN/FTP creds, tokens (Discord/Steam/Telegram), clipboard clippings, screenshots and system info — then zips everything up and ships it off to a server. Its config and function layout scream “market stealer” — modular, automated, and built to hit a lot of targets with minimal fuss. Next steps I’d run: a sandboxed dynamic run (network capture + process tracing) to see persistence and C2 behavior. Defenses (short): harden browsers and wallets, enable endpoint detection, rotate creds, and watch for odd outbound ZIP uploads or Telegram callbacks.
+This was my very basic analysis of the gremlin infostealer. Static analysis of **Gremlin Stealer** (C#) shows a modular infostealer that harvests browser creds/cookies, crypto wallets, VPN/FTP creds, Discord/Steam/Telegram tokens, clipboard data, screenshots and system info, then stages and exfiltrates to a remote server with Telegram reporting. Further steps would be to — run dynamic analysis (sandbox + network capture, process tracing) to confirm runtime behavior; mitigate with endpoint detection, browser hardening, and credential rotation.
+
