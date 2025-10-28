@@ -44,7 +44,7 @@ Looking at the file properties of the stealer in PE studio.
 
 We can also see the detection score on virus total in the results.
 
-Then we check the libraries this malware is importing.
+Then we check the libraries this malware is importing. We see it uses generic bcrypt.dll library for cryptographic operations, user32.dll for user based operations and iphlpapi.dll for networking.
 
 ![](./images/gremlin/s3.png)
 
