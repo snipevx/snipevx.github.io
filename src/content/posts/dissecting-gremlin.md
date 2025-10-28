@@ -17,7 +17,7 @@ draft: false
 
 Infostealers are a type of malware designed to secretly collect sensitive data such as passwords, browser data, financial information, or crypto keys from infected devices.
 
-In modern times, infostealers pose a major threat because they enable large-scale identity theft, financial fraud, and credential leaks. For everyday users, this means stolen bank logins, compromised social media accounts, and drained crypto wallets. For corporations, it leads to massive data breaches, loss of intellectual property, ransomware attacks, and unauthorized access to internal systems making infostealers one of the most common entry points for larger cyberattacks.
+In modern times, infostealers pose a major threat because they enable large-scale identity theft, financial fraud, and credential leaks. For everyday users, this means stolen bank logins, compromised social media accounts, and drained crypto wallets. For corporations, it leads to massive data breaches, loss of intellectual property, ransomware attacks, and unauthorized access to internal systems making infostealers one of the most common entry point for larger cyberattacks.
 
 ## Metadata
 
@@ -44,7 +44,7 @@ Looking at the file properties of the stealer in PE studio.
 
 We can also see the detection score on virus total in the results.
 
-Then we check the libraries this malware is importing. We see it uses generic bcrypt.dll library for cryptographic operations, user32.dll for user based operations and iphlpapi.dll for networking.
+We checked the libraries this malware is importing. We see it uses generic bcrypt.dll library for cryptographic operations, user32.dll for user based operations and iphlpapi.dll for networking.
 
 ![](./images/gremlin/s3.png)
 
@@ -53,6 +53,8 @@ Next, looking at the strings we see indication of the capabilities of this infos
 ![](./images/gremlin/s4.png)
 
 ### Analysis using dnSpy
+
+>[dnSpy](https://dnspy.org/) is a .NET debugger and decompiler — a powerful open-source tool used to inspect, debug, and modify .NET assemblies (like .dll and .exe files built on the .NET Framework or .NET Core).
 
 As we already know by running the file command, this malware is written in C# so we will be using dnSpy to analyze it further.
 
