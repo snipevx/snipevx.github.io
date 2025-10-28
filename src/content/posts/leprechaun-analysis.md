@@ -20,10 +20,10 @@ draft: false
 I recently completed the Practical Malware Analysis & Triage course from TCM Security, Big kudos to Matt Kiely (Husky Hacks) for putting together such an awesome course. So after completing PMAT I was looking out for some malware to analyze and I stumbled upon this LeprechaunHvnc loader. Doing further research I found that it was initially discovered by a researcher [Kseniia N](https://x.com/naumovax) and their teammate [Tony](https://x.com/t0nynot) in April 2024 and they posted about it [here](https://x.com/naumovax/status/1775185431237206209).
 
 #### What is a Loader ?
->  A loader is a malware that fetches, decrypts, or loads another payload (often from a remote server) into memory for execution.
+>A loader is a malware that fetches, decrypts, or loads another payload (often from a remote server) into memory for execution.
 
 #### Difference between a loader and a dropper
-> A dropper delivers and installs a built-in payload, while a loader retrieves or loads a payload from elsewhere for execution.
+>A dropper delivers and installs a built-in payload, while a loader retrieves or loads a payload from elsewhere for execution.
 
 
 ## Metadata
@@ -39,7 +39,7 @@ In this blog we will be going over the analysis of the leprechaun loader. First 
 ## Static Analysis
 ### Inspecting in PE Studio
 
->>[PE Studio](https://www.winitor.com/download) is a static analysis tool for Windows executables, primarily used in malware analysis, reverse engineering, and software inspection.
+>[PE Studio](https://www.winitor.com/download) is a static analysis tool for Windows executables, primarily used in malware analysis, reverse engineering, and software inspection.
 
 File properties
 
