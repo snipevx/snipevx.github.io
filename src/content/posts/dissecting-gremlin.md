@@ -75,7 +75,7 @@ We find the “config” function that contains the configurations of the malwar
 
 #### Analyzing the core functions
 
-##### Crypto Wallets
+##### **Crypto Wallets**
 
 This malware has a separate functions for various cryptocurrency and crypto wallets. Here is a list of all the crypto wallets supported by this stealer.
 
@@ -87,7 +87,7 @@ We will not be looking at each and every one of them as working of each cryptost
 
 This whole function is wrapped in try-catch block which allows it to swallow up failed attempts silently. The function first attempts to access the subkey `HKCU\Software\Litecoin\Litecoin-Qt`. It then copies the `wallet.dat` file from it's original path to the malware controlled path to be processed further for exfiltration.
 
-##### VPN Services
+##### **VPN Services**
 
 This malware also supports various VPNs and it fetches their credentials and exfiltrates it. Here is a list of all the VPNs supported by this stealer.
 
@@ -99,7 +99,7 @@ Here we will analyze one of the function for protonvpn.
 
 It fetches the `user.config` file in the protonvpn installation directory and copies it to the malware controlled directory for further processing.
 
-##### Browsers
+##### **Browsers**
 
 It is very common for infostealers to fetch for saved passwords and cookies from various browsers installed on the system and save them into a file to be exfiltrated later. Here we will take a look at the function responsible for fetching passwords and cookies from Chromium and Gecko based browsers.
 
@@ -111,7 +111,7 @@ Within the PathsCV20 we find function we find a list of browsers that the malwar
 
 >This malware also employs a common technique used by modern infostealers for bypassing the Chrome browsers cookie v20 protection.
 
-###### Steam, Discord & Telegram
+##### **Steam, Discord & Telegram**
 
 The **discord** function looks for token in browser sessions.
 
@@ -129,7 +129,7 @@ This malware can also steal data from **telegram’s** active session.
 
 ![](./images/gremlin/s19.png)
 
-###### Clipboard Data
+##### **Clipboard Data**
 
 The malware continuously scans the clipboard for contents and sends them over to the web server.
 
@@ -139,7 +139,7 @@ The malware continuously scans the clipboard for contents and sends them over to
 
 ![](./images/gremlin/s22.png)
 
-###### System Information
+##### **System Information**
 
 This malware also steals all the system information. The following function shows us what system information is gathered.
 
@@ -149,13 +149,13 @@ This stealer also has the ability to take screenshot.
 
 ![](./images/gremlin/s24.png)
 
-###### FTP Credentials
+##### **FTP Credentials**
 
 FTP applications such as Total Commander and File Zilla are also supported by this stealer. It gathers data such as Hostname, Port Number, Username and Password and send it to the web server.
 
 ![](./images/gremlin/s25.png)
 
-###### Credit Card Information
+##### **Credit Card Information**
 
 The malware fetches credit card information such as Name, Number, Expiry Year/Month from browsers.
 
@@ -163,7 +163,7 @@ The malware fetches credit card information such as Name, Number, Expiry Year/Mo
 
 ![](./images/gremlin/s27.png)
 
-###### Data Exfiltration
+##### **Data Exfiltration**
 
 Gremlin stages all gathered data, archived into a zip file in a malware controlled directory and then exfiltrated either to the web server at `207[.]244[.]199[.]46` and sends a message via telegram.
 
