@@ -38,6 +38,8 @@ Running the file command on the malware we find out that it's a .NET binary.
 
 ### Analysis using PE Studio
 
+>[PE Studio](https://www.winitor.com/download) is a static analysis tool for Windows executables, primarily used in malware analysis, reverse engineering, and software inspection.
+
 Looking at the file properties of the stealer in PE studio.
 
 ![](./images/gremlin/s2.png)

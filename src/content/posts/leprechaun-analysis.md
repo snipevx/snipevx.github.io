@@ -38,6 +38,9 @@ In this blog we will be going over the analysis of the leprechaun loader. First 
 
 ## Static Analysis
 ### Inspecting in PE Studio
+
+>>[PE Studio](https://www.winitor.com/download) is a static analysis tool for Windows executables, primarily used in malware analysis, reverse engineering, and software inspection.
+
 File properties
 
 ![alt text](./images/leprechaun/s2.png)
@@ -51,6 +54,8 @@ Additionally we look at the libraries being used in the loader. Pretty generic s
 ![alt text](./images/leprechaun/s4.png)
 
 ### Analyzing using IDA
+
+>[IDA](https://hex-rays.com/ida-free) (short for Interactive DisAssembler) created by Hex Rays, is one of the most powerful and widely used disassemblers and reverse engineering tools in the cybersecurity and software analysis world.
 
 ![alt text](./images/leprechaun/s5.png)
 
