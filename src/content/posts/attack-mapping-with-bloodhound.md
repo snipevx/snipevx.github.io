@@ -59,6 +59,9 @@ tar -xvzf bloodhound-cli-linux-amd64.tar.gz
 ./bloodhound-cli install
 ```
 
+> Bloodhound can be updated using the `./bloodhound-cli update` command.
+
+
 ![alt text](./images/bloodhound/s1.png)
 
 Now visit http://localhost:8080 in browser to access the bloodhound interface. Enter "admin" in email address field and the password provided in the terminal towards the end of the bloodhound-cli script output.
