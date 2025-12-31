@@ -1,7 +1,7 @@
 ---
 title: Writing your first assembly program
 published: 2022-01-03
-description: 'Learn how about assembly language and how to write a basic program in assembly'
+description: 'Learn about bare basics of assembly language and how to write a basic program in assembly'
 image: ''
 tags: ['assembly', 'reversing']
 category: 'reverse-engineering'
