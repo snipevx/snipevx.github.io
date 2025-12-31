@@ -7,16 +7,6 @@ tags: ['webappsec', 'cve-analysis']
 category: 'webapp-pentesting'
 draft: false
 ---
-- Introduction
-- Overview
-- React Basics
-- React Server Components and Flight Protocol
-- Deserialization Vulnerability
-- Deserialization to Remote Code Execution
-- Taking a look at the POC
-- Running the Exploit
-- Final Words
-
 ## Introduction
 
 While reviewing the major vulnerability disclosures of 2025, I found myself revisiting React2Shell, a flaw that sent shockwaves through the web development community last month. It has been some time since my last deep dive into web application pentesting, so I decided to analyze this critical vulnerability in detail.

@@ -49,6 +49,7 @@ These registers are generally use as they are needed. There are 3 purpose that a
 3. eip
 
 # STACK
+
 The stack is a data structure comprised of elements that are added or removed with operations- **push** or **pop** and **ret** .
 
 push adds an element to the top of the stack & pop removes an element from the top of the stack.
@@ -69,6 +70,7 @@ All the addresses outside of the current stack frame are called JUNK by the comp
 The return address is outside of the stack frame. All th space b/w esp & ebp is considered the stack frame.
 
 # HELLO WORLD IN ASSEMBLY
+
 Although its not really necessary to learn how to write in assembly just understanding how to read it will be enough. But hey it won't hurt to do a little hello world program will it ?
 
 ```
@@ -95,6 +97,7 @@ section .text
         pop ebp
         ret
 ```
+
 save this file as whatever file name you want but add .asm in last.
 Now we will compile this file and run it. Before compiling there are some packages you need to install (i am using ubuntu, if you are using other operating system then you might have to look up these packages for your os.)
 
@@ -102,20 +105,20 @@ Now we will compile this file and run it. Before compiling there are some packag
 - gcc
 - gcc-multilib
 
-```sh
+```bash
 sudo apt-get install nasm gcc gcc-multilib
 ```
 
 Once the packages are installed, let's compile our program and run it.
-```sh
+```bash
 nasm -f elf hello.asm
 ```
 This will create an object file named `hello.o`. Now we will use gcc to create a .out file which is our final file that we will run.
-```sh
+```bash
 gcc -m32 hello.o -o hello.out
 ```
 Now execute the file and you'll get the output "hello, world!".
-```sh
+```bash
 ./hello.out
 hello, world!
 ```

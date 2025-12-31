@@ -7,14 +7,6 @@ tags: ['malware-analysis', 'reversing']
 category: 'malware-analysis'
 draft: false
 ---
-
-- Introduction
-- Metadata
-- Overview
-- Static Analysis
-- Dynamic Analysis
-- Final Words
-
 ## Introduction
 
 I recently completed the Practical Malware Analysis & Triage course from TCM Security, Big kudos to Matt Kiely (Husky Hacks) for putting together such an awesome course. So after completing PMAT I was looking out for some malware to analyze and I stumbled upon this LeprechaunHvnc loader. Doing further research I found that it was initially discovered by a researcher [Kseniia N](https://x.com/naumovax) and their teammate [Tony](https://x.com/t0nynot) in April 2024 and they posted about it [here](https://x.com/naumovax/status/1775185431237206209).

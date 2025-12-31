@@ -7,12 +7,6 @@ tags: ['malware-analysis', 'reversing']
 category: 'malware-analysis'
 draft: false
 ---
-- Introduction
-- Metadata
-- Overview
-- Analysis
-- Final Words
-
 ## Introduction
 
 Infostealers are a type of malware designed to secretly collect sensitive data such as passwords, browser data, financial information, or crypto keys from infected devices.
