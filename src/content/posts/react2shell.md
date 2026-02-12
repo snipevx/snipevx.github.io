@@ -255,6 +255,8 @@ Now click on send and check the response.
 
 The response will have a 500 Internal Server Error Code and the response body will contain the output for the id command.
 
+Check out my POC for React2Shell [here](https://github.com/snipevx/React2Shell-POC).
+
 ## Final Words
 
 This concludes my analysis of the React2Shell (CVE-2025-55182) vulnerability. We explored the React fundamentals necessary to understand the core flaw, examined React Server Components and the Flight Protocol, and analyzed how an unsafe deserialization vulnerability can be chained to achieve Remote Code Execution. Finally, we demonstrated the exploit in a controlled Docker environment. I highly recommend that all developers using React and Next.js audit their versions immediately. The next step for researchers would be to explore reverse shell persistence or alternative payloads to further understand the extent of this flaw.
