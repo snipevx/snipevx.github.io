@@ -14,7 +14,7 @@ While reviewing the major vulnerability disclosures of 2025, I found myself revi
 ## Overview
 
 React2Shell is a CVSS 10.0 critical severity vulnerability affecting server-side React.js usage. It is listed under CVE number: **CVE-2025-55182** for **React.js** and **CVE-2025-66487** for **Next.js** framework. This vulnerability allows unauthenticated remote code execution through crafted HTTP request.
-The react2shell vulnerability affects the React Server Components (RSC) and the frameworks that implements them such as Next.js and allows unauthenticated remote code execution. This vulnerability was reported by [Lachlan Davidson](https://github.com/lachlan2k) on 29th November 2025 (Pacific Time) to the Meta team (maintainers of React.js). The vulnerability was first disclosed publicly later on 3rd December (Pacific Time) along with a patch. In this blog, we will cover some basics of React.js needed to understand this vulnerability, React Server Components (RCS), Flight Protocol, Analyze the vulnerability, Analyze the POC and finally Run the exploit in our own lab environment to see how the exploit works in real scenarios.
+The react2shell vulnerability affects the React Server Components (RSC) and the frameworks that implements them such as Next.js and allows unauthenticated remote code execution. This vulnerability was reported by [Lachlan Davidson](https://github.com/lachlan2k) on 29th November 2025 (Pacific Time) to the Meta team (maintainers of React.js). The vulnerability was first disclosed publicly later on 3rd December (Pacific Time) along with a patch. In this blog, we will cover some basics of React.js needed to understand this vulnerability, React Server Components (RSC), Flight Protocol, Analyze the vulnerability, Analyze the POC and finally Run the exploit in our own lab environment to see how the exploit works in real scenarios.
 
 ## React Basics
 
@@ -35,7 +35,7 @@ Here are the important components of React.js we need to know about for understa
 
 ## React Server Components and Flight Protocol
 
-### React Server Component (RCS)
+### React Server Component (RSC)
 
 React Server Components are a new type of component that run exclusively on the server, allowing for improved performance and user experience by reducing the amount of JavaScript sent to the client. They can fetch data and render parts of the UI before sending the final HTML to the browser, which helps in faster initial loading times and better SEO. React Server Component was first introduced in React 19.
 
