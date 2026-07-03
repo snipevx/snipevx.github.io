@@ -55,7 +55,7 @@ export const profileConfig: ProfileConfig = {
 		{
 		name: 'X',
 		icon: 'fa6-brands:square-x-twitter',								
-		url: 'https://x.com/0xSN1PE',
+		url: 'https://x.com/0xSN1PE'
 		}
 	],
 };
