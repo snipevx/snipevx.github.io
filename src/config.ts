@@ -56,11 +56,6 @@ export const profileConfig: ProfileConfig = {
 		name: 'X',
 		icon: 'fa6-brands:square-x-twitter',								
 		url: 'https://x.com/0xSN1PE',
-		},
-		{
-		name: 'Ko-Fi',
-		icon: 'cib:ko-fi',
-		url: 'https://ko-fi.com/snipesec'      
 		}
 	],
 };
